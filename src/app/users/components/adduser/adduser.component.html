@@ -1,0 +1,32 @@
+<div class="toolbar-section box-style">
+    <h5 class="m-0">{{userId? 'Edit' : 'Add'}} User</h5>
+    <a class="btn btn-primary" [routerLink]="['/users/list']">Back</a>
+  </div>
+  
+  <div class="box-style">
+    <form [formGroup]="addUserForm">
+      <div class="row">
+        <div class="mb-3 col-md-3">
+          <label class="form-label">first name</label>
+          <input type="text" class="form-control" formControlName="firstName">
+        </div>
+          <div class="mb-3 col-md-3">
+            <label class="form-label">email</label>
+            <input type="text" class="form-control" formControlName="email">
+          </div>
+        <div class="mb-3 col-md-3">
+          <label class="form-label">phone</label>
+          <input type="text" class="form-control" formControlName="phone">
+        </div>
+        <div class="mb-3 col-md-3">
+            <label class="form-label">age</label>
+            <input type="text" class="form-control" formControlName="age">
+          </div>
+        <div class="mb-3 col-md-12 text-end">
+          <button type="button" (click)="userId ? onEditUser() : onAddUser()" class="btn btn-primary btn-width">
+            {{ userId ? 'Edit' : 'Add' }}
+          </button>        </div>
+      </div>
+    </form>
+  </div>
+  

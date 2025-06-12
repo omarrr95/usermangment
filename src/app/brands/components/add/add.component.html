@@ -1,0 +1,24 @@
+<div class="toolbar-section box-style">
+    <h5 class="m-0">{{brandId? 'Edit' : 'Add'}} Brand</h5>
+    <a class="btn btn-primary" [routerLink]="['/brands/list']">Back</a>
+  </div>
+  
+  <div class="box-style">
+    <form [formGroup]="addBrandForm">
+      <div class="row">
+        <div class="mb-3 col-md-6">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="mb-3 col-md-6">
+          <label class="form-label">Img</label>
+          <input type="file" class="form-control" (change)="onFileChange($event)">
+        </div>
+        <div class="mb-3 col-md-12 text-end">
+          <button type="button" (click)="brandId ? onEditBrand() : onAddBrand()" class="btn btn-primary btn-width">
+            {{ brandId ? 'Edit' : 'Add' }}
+          </button>        </div>
+      </div>
+    </form>
+  </div>
+  

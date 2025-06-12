@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.box-style {
+    background-color: #fff;
+    box-shadow: 0 0 5px #dad9d9;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.toolbar-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-width {
+    min-width: 100px;
+}

@@ -1,0 +1,47 @@
+<div class="side-bar p-3 w-100">
+    <h3><span>UMS</span></h3>
+   
+    <div class="img-container">
+        <img src="./../../../../assets/img/img.png" />
+    </div>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a [routerLink]="['/home']" routerLinkActive="active" class="nav-link" aria-current="page">
+            <span><img src="./../../../../assets/img/Vector.svg" /></span>
+          Home
+        </a>
+      </li>
+      <li class="show-in-mobile">
+        <a [routerLink]="['/users/list']" routerLinkActive="active" class="nav-link link-dark">
+            <span><img src="./../../../../assets/img/bookmark.svg" /></span>
+          Users
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/users/add']" routerLinkActive="active" class="nav-link link-dark">
+            <span><img src="./../../../../assets/img/graduation-cap.svg" /></span>
+          Add User
+        </a>
+      </li>
+      <!-- <li>
+        <a href="#" class="nav-link link-dark">
+            <span><img src="./../../../../assets/img/usd-square.svg" /></span>
+            Profile
+        </a>
+      </li> -->
+      <li class="show-in-mobile">
+        <a [routerLink]="['/brands/list']" routerLinkActive="active" class="nav-link link-dark">
+            <span><img src="./../../../../assets/img/usd-square.svg" /></span>
+            Brands
+        </a>
+      </li>
+    </ul>
+    <ul class="nav">
+        <li class="m-auto">
+            <a href="#" class="nav-link link-dark">
+              Sign Out <img src="./../../../../assets/img/sign-out-alt.svg" />
+            </a>
+          </li>
+    </ul>
+  </div>
+  

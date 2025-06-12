@@ -1,0 +1,32 @@
+<div class="login-container">
+    <div class="login-box">
+       <div class="header-form">
+        <h3><span>User Management System</span></h3>
+        <h4>Sign In</h4>
+        <p>Enter your credentials to access your account</p>
+       </div>
+        <form [formGroup]="loginForm">
+            
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">User Name</label>
+              <input type="text" class="form-control" formControlName="username">
+            </div>
+            <div class="alert alert-danger py-2" *ngIf="loginForm.get('username')?.errors?.['required'] && loginForm.get('username')?.touched">
+                <span>username is required</span>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <div class="pass-container">
+                <input [type]="passtype"  class="form-control"  formControlName="password">
+                <a (click)="showpass()">
+                    <i  class="fa" [ngClass]="passtype === 'password' ? 'fa-eye' : 'fa-eye-slash'"></i>
+                </a>
+              </div>
+            </div>
+            <div class="alert alert-danger py-2" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">
+                <span>password is required</span>
+            </div>
+            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" (click)="onLogin(loginForm)">Login</button>
+          </form>
+    </div>
+</div>
