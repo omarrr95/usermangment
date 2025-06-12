@@ -26,20 +26,27 @@ export class AddComponent implements OnInit {
   ) {
     this.brandId = _ActivatedRouter.snapshot.params['id'];
   }
-
+  getImageSrc(): string {
+    const imgVal = this.addBrandForm.get('img')?.value;
+    if (!imgVal) return '';
+    return imgVal.startsWith('data:image') ? imgVal : `data:image/jpeg;base64,${imgVal}`;
+  }
   ngOnInit(): void {
     if (this.brandId) {
       this._brands.getBrand(this.brandId).subscribe({
         next: (res: any) => {
+          // Ensure it has base64 prefix if missing
+          const imgValue = res.img.startsWith('data:image') ? res.img : `data:image/jpeg;base64,${res.img}`;
           this.addBrandForm.patchValue({
             name: res.name,
-            img: res.img
+            img: imgValue
           });
         },
         error: () => {
           this.toastr.error('Failed to load brand data');
         }
       });
+      
     }
   }
 
@@ -83,7 +90,6 @@ export class AddComponent implements OnInit {
       name: this.addBrandForm.get('name')?.value ?? '',
       img: this.addBrandForm.get('img')?.value ?? ''
     };
-  
     this._brands.editBrand(data, this.brandId).subscribe({
       next: (res: any) => {
         this.toastr.success('Brand updated successfully');
