@@ -15,7 +15,7 @@
         <th scope="col">#</th>
         <th scope="col"></th>
         <th scope="col">Name</th>
-        <!-- <th scope="col"></th> -->
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -23,10 +23,10 @@
         <td scope="row">{{brand.id}}</td>
         <td><img [src]="brand.img" /></td>
         <td>{{brand.name}}</td>
-        <!-- <td>
+        <td>
             <a [routerLink]="['/brands/edit',brand.id]"><img src="./../../assets/img/icons/pen.svg"/></a>
             <a (click)="deleteBrand(brand.id)"><img src="./../../assets/img/icons/trash.svg"/></a>
-        </td> -->
+        </td>
       </tr>
 
     </tbody>

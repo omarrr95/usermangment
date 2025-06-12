@@ -16,12 +16,12 @@ export class BrandsService {
     return this._HttpClient.post('http://ecommerce-api.omar-work.website/api/Brands', data);
   }
   editBrand(data: { name: string; img: string }, id: number): Observable<any> {
-    return this._HttpClient.post(`http://ecommerce-api.omar-work.website/api/Brands/${id}`, data);
+    return this._HttpClient.put(`http://ecommerce-api.omar-work.website/api/Brands/?id=${id}`, data);
   }
   getBrand(id:number): Observable<any> {
     return this._HttpClient.get(`http://ecommerce-api.omar-work.website/api/Brands/${id}`);
   }
   deleteBrand(id: number): Observable<any> {
-    return this._HttpClient.delete(`http://ecommerce-api.omar-work.website/api/Brands/${id}`);
+    return this._HttpClient.delete(`http://ecommerce-api.omar-work.website/api/Brands/?id=${id}`);
   }
 }
